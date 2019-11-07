@@ -164,7 +164,6 @@ def f(periods, rhostar, rprs, dur, dur_err):
         
     cosi, success = op.leastsq(residuals_for_duration_fit, cosi, args=(transit_params, dur, dur_err))
         
-    #model_dur = calculate_duration(periods, rhostar, np.median(rprs), cosi)
     model_dur = calculate_duration(periods, rhostar, rprs, cosi)
     
     return calculate_flatness(dur, model_dur)
